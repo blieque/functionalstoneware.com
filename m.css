@@ -1,0 +1,148 @@
+/* wip stuff */
+._placehold {
+	margin:20px 0 0;
+	padding:40px;
+	background-color:#eee;
+	width:100%;
+	height:320px;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+}
+._placehold:before {
+	content:"This is a large block to mimic wrap :)";
+	color:#222;
+}
+
+/* FUNCTIONAL STONEWARE 
+ * MAIN STYLEHEET */
+
+/* @font-face declarations for web typography */
+@font-face {
+	font-family:'Source Sans Pro';
+	font-style:normal;
+	font-weight:400;
+	src:local('Source Sans Pro'),local('SourceSansPro-Regular'),url(http://fonts.gstatic.com/s/sourcesanspro/v8/ODelI1aHBYDBqgeIAH2zlBM0YzuT7MdOe03otPbuUS0.woff) format('woff');
+}
+@font-face {
+	font-family:'Source Sans Pro';
+	font-style:normal;
+	font-weight:700;
+	src:local('Source Sans Pro Bold'),local('SourceSansPro-Bold'),url(http://fonts.gstatic.com/s/sourcesanspro/v8/toadOcfmlt9b38dHJxOBGFkQc6VGVFSmCnC_l7QZG60.woff) format('woff');
+}
+
+/* general element styling */
+html,body {
+	margin:0;
+	font-family:"source sans pro",helvetica neue,lucida sans,sans-serif;
+	font-weight:normal;
+	overflow-x:hidden;
+}
+h1,h2,h3 {
+	margin:0;
+}
+a {
+	color:inherit;
+}
+
+/* general shared classes, some specific styling */
+.cf:after,#wrap:after { /* clearfix */
+	content:"";
+	display:block;
+	clear:both;
+}
+.sc { /* keyboard shortcuts */
+	color:#ff9f00;
+}
+
+/* header */
+header {
+	position:fixed;
+	width:100%;
+	height:64px;
+	color:#4f4f4f;
+	background:#fff;
+	border:solid 0 #ebebeb;
+	border-width:0 0 1px 0;
+	line-height:140%;
+}
+header>ul,section {
+	margin:0 auto;
+	padding:0;
+	width:65%;
+}
+header ul { /* main nav ul */
+	display:block;
+	list-style:none;
+	border:inherit;
+	border-width:0;
+}
+header>ul>li { /* all primary nav lis */
+	display:block;
+	margin:0 -1px 0 0;
+	float:left;
+	border:inherit;
+	border-width:0 1px;
+}
+header>ul>li:not(#s):hover { /* all but last nav li */
+	background:#ebebeb;
+}
+header>ul>:first-child { /* logotype */
+	font-size:20%;
+}
+header>ul>:first-child a { /* logotype anchor */
+
+}
+header a { /* all header anchors */
+	display:block;
+	padding:20px;
+	height:24px;
+	text-decoration:none;
+}
+
+/* social */
+#s { /* social nav li */
+	padding-right:1px;
+}
+#s,#s li {
+	border:none;
+	float:right;
+}
+#s a { /* social anchors */
+	display:block;
+	width:24px;
+	height:24px;
+	background-image:url(img/s.png);
+	text-indent:-999em;
+}
+#f { /* facebook */
+	background-color:rgb(59,89,152);
+}
+a#f:hover,a#f:focus {
+	background-color:rgb(47,71,122);
+}
+#f:before {
+	background-position:0 0;
+}
+#l { /* linkedin */
+	background-color:rgb(72,117,180);
+}
+a#l:hover,a#l:focus {
+	background-color:rgb(58,94,144);
+}
+#l:before {
+	background-position:0 -24px;
+}
+#t { /* twitter */
+	background-color:rgb(85,172,238);
+}
+a#t:hover,a#t:focus {
+	background-color:rgb(68,138,190);
+}
+#t:before {
+	background-position:0 -48px;
+}
+
+/* body */
+section {
+	padding:86px 0 18px;
+}
