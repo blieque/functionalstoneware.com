@@ -26,8 +26,8 @@ function fs_open($title = "") { // opener/head function, declare recieved variab
 	</head><body>
 		<header>
 			<ul>
-				<li id="h">
-					<a href="/"><span>Rhiain</span> NATHANSON</a>
+				<li>
+					<a id="h" href="/">FUNCTIONAL<br><span>STONEWARE</span></a>
 				</li>
 				<li><a href="about">ABOUT</a></li>
 				<li><a href="gallery">GALLERY</a></li>

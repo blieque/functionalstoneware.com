@@ -64,6 +64,7 @@ header {
 	border:solid 0 #ebebeb;
 	border-width:0 0 1px 0;
 	line-height:0;
+	box-shadow:0 4px 0 0 rgba(0,0,0,.02);
 }
 header>ul,section {
 	margin:0 auto;
@@ -87,11 +88,15 @@ header>ul>li { /* all primary nav lis */
 header>ul>li:not(#s):hover { /* all but last nav li */
 	background:#ebebeb;
 }
-header>ul>:first-child { /* logotype */
-	font-size:20%;
+#h { /* logotype */
+	padding:16px 32px;
+	height:32px;
+	font-size:120%;
+	font-family:georgia,serif;
+	line-height:80%;
 }
-header>ul>:first-child a { /* logotype anchor */
-
+#h span {
+	font-weight:bold;
 }
 header a { /* all header anchors */
 	display:block;
