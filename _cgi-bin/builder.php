@@ -30,6 +30,7 @@ function fs_open($title = "") { // opener/head function, declare recieved variab
 					<a id="h" href="/">FUNCTIONAL<br><span>STONEWARE</span></a>
 				</li>
 				<li><a href="about">ABOUT</a></li>
+				<li><a href="contact">CONTACT</a></li>
 				<li><a href="gallery">GALLERY</a></li>
 				<li><a href="shop">SHOP</a></li>
 				<li><a href="//blog.functionalstoneware.com">BLOG</a></li>
