@@ -48,7 +48,7 @@ function fs_open($title = "") { // opener/head function, declare recieved variab
 }
 function fs_close() { // close tags opened in the fs_open() function
 ?>
-</section></body></html>
+</section><footer><p>Licensed under GPL v2 and Creative Commons BY-NC <a href="about#license">details</a></p></footer></body></html>
 <?php
 }
 ?>

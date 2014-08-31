@@ -1,9 +1,8 @@
 /* wip stuff */
 ._placehold {
-	margin:20px 0 0;
+	margin:16px 0 0;
 	padding:40px;
 	background-color:#eee;
-	width:100%;
 	height:320px;
 	-webkit-box-sizing:border-box;
 	box-sizing:border-box;
@@ -30,46 +29,45 @@
 	src:local('Source Sans Pro Bold'),local('SourceSansPro-Bold'),url(http://fonts.gstatic.com/s/sourcesanspro/v8/toadOcfmlt9b38dHJxOBGFkQc6VGVFSmCnC_l7QZG60.woff) format('woff');
 }
 
-/* general element styling */
+/* base element styling */
 html,body {
 	margin:0;
+	min-height:calc(100vh - 65px);
+	position:relative;
+	color:#282828;
 	font-family:"source sans pro",helvetica neue,lucida sans,sans-serif;
 	font-weight:normal;
-	overflow-x:hidden;
 }
 h1,h2,h3 {
 	margin:0;
 }
 a {
-	color:inherit;
+	color:#17708f;
+	text-decoration:none;
+	font-style:italic;
+	border-bottom:dotted 1px #17708f;
+}
+a:hover {
+	background-color:rgba(0,0,0,.05);
 }
 
-/* general shared classes, some specific styling */
+/* shared classes, some specific styling */
 .cf:after,#wrap:after { /* clearfix */
 	content:"";
 	display:block;
 	clear:both;
 }
-section:not(:last-child) { /* full-width */
-	margin-top:65px;
-	padding:60px 0;
-	max-height:200px;
-	color:#fff;
-	font-size:120%;
-}
-section:not(:last-child) p,header>ul,section:last-child { /* elements to assume 80% width */
+section:not(:last-of-type) p,header>ul,section:last-of-type,footer p { /* elements to assume 80% width */
 	margin:0 auto;
 	width:80%;
 	max-width:1248px;
-	padding:0;
 }
 
 /* header */
 header { /* fixed header; navigation, social */
-	position:fixed;
 	width:100%;
-	height:64px;
-	color:#282828;
+	position:fixed;
+	top:0;
 	background:#fff;
 	border:solid 0 #ebebeb;
 	border-width:0 0 1px 0;
@@ -78,6 +76,7 @@ header { /* fixed header; navigation, social */
 }
 header ul { /* main nav ul */
 	display:block;
+	padding:0;
 	list-style:none;
 	border:inherit;
 	border-width:0;
@@ -99,23 +98,26 @@ header>ul>li:not(#s):hover { /* all but last nav li */
 	height:32px;
 	font-size:120%;
 	font-family:georgia,serif;
+	font-style:normal;
 	line-height:80%;
 }
-#h span {
+#h span { /* second line */
 	font-weight:bold;
 }
-header a { /* all header anchors */
+header a,header a:visited { /* all header anchors */
 	display:block;
 	padding:32px;
 	height:0;
 	text-decoration:none;
+	color:inherit;
+	border:none;
 }
 
 /* social */
 #s { /* social nav li */
 	padding-right:1px;
 }
-#s,#s li {
+#s,#s li { /* social nav li, grandchild lis */
 	border:none;
 	float:right;
 }
@@ -135,9 +137,36 @@ header a { /* all header anchors */
 }
 
 /* body */
-section {
-	padding:0 0 32px;
+section { /* index page banner, content column */
+	padding:32px 0 80px;
 }
-section:not(:last-child) {
-	background:url(img/f/01.jpg);
+section:not(:last-of-type) { /* index page banner */
+	padding:60px 0;
+	max-height:80px;
+	font-size:120%;
+	background:url(img/f/06.jpg) 0 55%;
+	background-size:100%;
+}
+section:first-of-type {
+	margin-top:65px;
+}
+
+/* footer */
+footer {
+	padding:16px 0;
+	height:16px;
+	position:absolute;
+	right:0;
+	bottom:0;
+	left:0;
+	background:#ebebeb;
+	font-size:80%;
+}
+
+/* quirky specifics */
+#license:before {
+	content:"";
+	display:block;
+	margin:-81px 0 0;
+	height:81px;
 }
