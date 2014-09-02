@@ -30,13 +30,14 @@
 }
 
 /* base element styling */
-html,body {
+body {
 	margin:0;
 	min-height:calc(100vh - 65px);
 	position:relative;
 	color:#282828;
 	font-family:"source sans pro",helvetica neue,lucida sans,sans-serif;
 	font-weight:normal;
+	text-align:justify;
 }
 h1,h2,h3 {
 	margin:0;
