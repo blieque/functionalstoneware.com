@@ -21,7 +21,8 @@ function fs_open($title = "") { // opener/head function, declare recieved variab
 		<link rel="stylesheet" href="/sp.css" media="(max-device-width:16cm) or (max-device-width:720px)">
 		<link rel="stylesheet" href="/p.css" media="print">
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+		<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
+		<script src="jquery.min.js"></script>
 		<script src="jquery.fs.js"></script>
 	</head><body>
 		<header>

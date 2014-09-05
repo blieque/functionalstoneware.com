@@ -78,7 +78,8 @@ textarea { /* big tet boxes */
 }
 form>div { /* submit buttons */
 	display:block;
-	margin:16px auto 0;
+	margin:12px auto 0;
+	position:relative;
 	width:20%;
 	min-width:160px;
 	max-width:100%;
@@ -210,17 +211,21 @@ section:not(:last-of-type) p,header>ul,section:last-of-type,footer p { /* elemen
 	height:81px;
 }
 form svg { /* form submit svg */
-	float:right;
+	position:absolute;
+	right:14px;
+	top:14px;
 }
-#s,#e { /* tick/cross paths in form submit svg */
+#g,#r { /* tick/cross paths in form submit svg */
 	fill:none;
-	stroke-width:4px;
+	stroke-width:6px;
 	stroke-linecap:round;
 	stroke-linejoin:round;
 }
-#s {
-	stroke:green;
+#g {
+	stroke:#b0cf49;
+	stroke-dasharray:0 38;
 }
-#e {
-	stroke:red;
+#r {
+	stroke:#c34534;
+	stroke-dasharray:0 29;
 }
