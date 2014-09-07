@@ -202,7 +202,7 @@ section:not(:last-of-type) p,header>ul,section:last-of-type,footer p { /* elemen
 	background-color:rgba(0,0,0,.05);
 }
 header>ul>li,#s>path,.e {
-	-moz-transition:all ease .12s;
+	-webkit-transition:all ease .12s;
 	transition:all ease .12s;
 }
 .e { /* form errors */
@@ -225,12 +225,13 @@ form svg { /* form submit svg */
 	stroke-width:6px;
 	stroke-linecap:round;
 	stroke-linejoin:round;
+	stroke-dasharray:0 40;
+	-webkit-transition:all ease .5s;
+	transition:all ease .5s;
 }
 #g {
 	stroke:#b0cf49;
-	stroke-dasharray:0 38;
 }
 #r {
 	stroke:#c34534;
-	stroke-dasharray:0 29;
 }

@@ -6,45 +6,44 @@
 // variables
 var formStatus;
 
-// init
-function init() {
-}
-function formSvg(d,s) {							// data, status
+// functions
+function formSubmit(d,s) {							// data, status
+	console.log(d);
 	if (d != 0) {									// error in form
-		for (var i = 1; i < 4; i++) {					// make inputs red
-			$("form *").eq(i - 1).addClass("e");			// add error class to imput(s)
+		console.log("d donna equal zero");
+		var c = [										// array depending on errors for use in for loop
+			/1/.test(d) ? "e" : "",
+			/2/.test(d) ? "e" : "",
+			/3/.test(d) ? "e" : ""
+		];
+		console.log(c,d);
+		console.log("removin' class 'e'", d);
+		$(".e").removeClass("e");						// clear old red borders on inputs
+		for (var i = 0; i < 3; i++) {					// make inputs red
+			$("form *").eq(i).addClass(c[i]);				// add error class to input(s)
 		}
-		d = 1;
 	}
 	if (formStatus || formStatus == 0) {			// if box ticked/crossed before
-		var path = formStatus ? "#r" : "#g",			// path id
-			dal = d ? 38 : 27;					// dash-array limit
-		$(path).animate({opacity:0},100,function(){
-			$(path).css({"stroke-dasharray":"0 " + dal,"opacity":1});
-			formSvgFrame(d);
+		var dal = formStatus ? 27 : 38;					// dash-array limit
+		$("form path").animate({opacity:0},100,function(){	// fade out over 100ms
+			$("form path").css({"stroke-dasharray":"0 40","opacity":1});	// dash-array and opacity reset 
+			formSvg(d);										// call svg function
 		});
 	} else {
-		formSvgFrame(d);
+		formSvg(d);										// call svg function
 	}
+	formStatus = d ? 0 : 1;							// update last form result variable
 }
-function formSvgFrame(d) {						// svg (0 or not)
-	var count = 1,									// counter
-		dal = d ? 27 : 38,							// dash-array limit
-		path = d ? "#r" : "#g",						// path id (red or green)
-		anim = setInterval(function(){				// interval to draw 
-			$(path).css("stroke-dasharray",count + " " + dal);
-			if (count >= dal) {
-				clearInterval(anim);
-			}
-			count += 5;
-		},25);
-	formStatus = d;
+function formSvg(d) {							// svg (0 or 1)
+	var dal = d ? 27 : 38,							// dash-array limit
+		path = d ? "#r" : "#g";						// path id (red or green)
+	$(path).css("stroke-dasharray",dal + " 40");	// progess the stroke/move to next frame
 }
 
 // jQ call
 $(function(){
 	$("[type='submit']").click(function(){
-		$.post("contact","a=s&" + $("form").serialize(),formSvg);
+		$.post("contact","a=s&" + $("form").serialize(),formSubmit);
 	});
 	$(".e").focus(function(){
 		$(this).removeClass("e");
