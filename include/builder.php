@@ -15,15 +15,16 @@ function fs_open($title = "") { // opener/head function, declare recieved variab
 	?>
 	<!DOCTYPE html><html><head>
 		<title><?php echo $title ?>Functional Stoneware</title>
-		<link rel="shortcut icon" href="/images/favicon.ico" />
-		<link rel="stylesheet" href="/m.css">
-		<link rel="stylesheet" href="/t.css" media="(max-device-width:27.5cm) or (max-device-width:1100px)">
-		<link rel="stylesheet" href="/sp.css" media="(max-device-width:16cm) or (max-device-width:720px)">
-		<link rel="stylesheet" href="/p.css" media="print">
+		<link rel="shortcut icon" href="/img/favicon.ico" />
+		<link rel="stylesheet" href="https://<?php echo $_SERVER["SERVER_NAME"]?>/css/m.css">
+		<link rel="stylesheet" href="https://<?php echo $_SERVER["SERVER_NAME"]?>/css/t.css" media="(max-device-width:27.5cm) or (max-device-width:1100px)">
+		<link rel="stylesheet" href="https://<?php echo $_SERVER["SERVER_NAME"]?>/css/sp.css" media="(max-device-width:16cm) or (max-device-width:720px)">
+		<link rel="stylesheet" href="https://<?php echo $_SERVER["SERVER_NAME"]?>/css/p.css" media="print">
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-		<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
-		<script src="jquery.min.js"></script>
-		<script src="jquery.fs.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+		<!--<script src="https://<?php echo $_SERVER["SERVER_NAME"]?>/js/jquery.min.js"></script>-->
+		<script src="https://<?php echo $_SERVER["SERVER_NAME"]?>/js/jquery.fs.js"></script>
+		<script>if(window.location.host=="functionalstoneware.com"){alert("This website is under development. If you wish to contact Rhiain, please follow the Facebook page link at the top of the page.")}</script>
 	</head><body>
 		<header>
 			<ul>
