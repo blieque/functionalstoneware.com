@@ -12,12 +12,19 @@
 	color:#222;
 }
 
-/* functional stoneware
- * main stylesheet
- * written by blieque mariguan
- * licensed under GPL v2 */
+/*
+ *	Main stylesheet for Functional Stoneware
+ *	Created by Blieque Mariguan <himself [at] blieque [dot] co [dot] uk>
+ *	Licensed under GPL v3
+ *
+ *	https://github.com/blieque/functionalstoneware.com/
+ *	https://gnu.org/licenses/gpl.html
+ *
+ */
 
-/* @font-face declarations for web typography */
+
+/* web typography */
+
 @font-face {
 	font-family:'Source Sans Pro';
 	font-style:normal;
@@ -31,7 +38,9 @@
 	src:local('Source Sans Pro Bold'),local('SourceSansPro-Bold'),url(https://fonts.gstatic.com/s/sourcesanspro/v8/toadOcfmlt9b38dHJxOBGFkQc6VGVFSmCnC_l7QZG60.woff) format('woff');
 }
 
+
 /* base element styling */
+
 body {
 	margin:0;
 	min-height:calc(100vh - 65px);
@@ -98,21 +107,19 @@ header { /* fixed header; navigation, social */
 	line-height:0;
 	box-shadow:0 4px 0 0 rgba(0,0,0,.02);
 }
-header ul { /* main nav ul */
-	display:block;
-	padding:0;
-	list-style:none;
+header nav { /* main nav element */
 	border:inherit;
 	border-width:0;
 }
-header>ul>li { /* all primary nav lis */
-	display:block;
+header a { /* all header links */
+	display:inline-block;
 	margin:0 -1px 0 0;
+	padding:32px;
 	float:left;
 	border:inherit;
 	border-width:0 1px;
 }
-header>ul>li:not(#s):hover { /* all but last nav li */
+header a:hover { /* all but last nav li */
 	box-shadow:0 0 0 8px rgba(0,0,0,.04) inset;
 }
 #h { /* logotype */
@@ -126,32 +133,18 @@ header>ul>li:not(#s):hover { /* all but last nav li */
 #h span { /* second line */
 	font-weight:bold;
 }
-header a { /* all header anchors */
-	display:block;
-	padding:32px;
-	height:0;
-}
 
 /* social */
-#s { /* social nav li */
+#s { /* social media nav element */
 	padding-right:1px;
-}
-#s,#s li { /* social nav li, grandchild lis */
-	border:none;
 	float:right;
 }
-#s a { /* social anchors */
-	display:block;
-	margin:16px 0 16px 8px;
-	padding:0;
+#s a {
+	box-shadow:none;
+	padding:16px 0 16px 16px;
 }
-#s path { /* social buttons */
-	stroke:#fff;
-	stroke-width:16px;
-	stroke-opacity:0;
-}
-#s path:hover { /* social buttons colour change */
-	stroke-opacity:.25;
+#s a:hover { /* social buttons colour change */
+	opacity:.7;
 }
 
 /* body */
@@ -160,7 +153,7 @@ section { /* index page banner, content column */
 }
 section:not(:last-of-type) { /* index page banner */
 	height:12vh;
-	background:url(/img/b/01.jpg) 0 35%;
+	background:url(/assets/img/banner/01.jpg) 0 35%;
 	background-size:100%;
 }
 section:first-of-type {	/* first element after header */
@@ -184,12 +177,13 @@ footer { /* footer of page (license info) */
 
 
 /* shared classes, specific styles */
+
 .cf:after { /* clearfix */
 	content:"";
 	display:block;
 	clear:both;
 }
-section:not(:last-of-type) p,header>ul,section:last-of-type,footer p { /* elements to assume 80% width */
+section:not(:last-of-type) p,header nav,section:last-of-type,footer p { /* elements to assume 80% width */
 	margin:0 auto;
 	width:80%;
 	max-width:1248px;
@@ -201,7 +195,7 @@ section:not(:last-of-type) p,header>ul,section:last-of-type,footer p { /* elemen
 .l:hover { /* hover state of styled anchors */
 	background-color:rgba(0,0,0,.05);
 }
-header>ul>li,#s>path,.e {
+header a,#s path,input,textarea {
 	-webkit-transition:all ease .12s;
 	transition:all ease .12s;
 }

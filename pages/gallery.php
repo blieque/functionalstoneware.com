@@ -1,3 +1,10 @@
-<?php include"../include/builder.php";fs_open("Gallery")?>
+<?php
+	include "../includes/builder.php";
+	fs_open("Gallery");
+?>
+
 <p>Pitchaz mann</p>
-<?php fs_close()?>
+
+<?php
+	fs_close();
+?>
