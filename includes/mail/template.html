@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ title }}</title>
+		<style>
+			{{ #include main.css }}
+		</style>
+	</head>
+
+	<body>
+
+		<header>
+			<div>
+				<a href="https://functionalstoneware.com/">
+					<h2><span>FUNCTIONAL</span><br>STONEWARE</h2>
+				</a>
+			</div>
+		</header>
+
+		<section>
+			<p>{{ name }} ({{ email }}) has sent a message from <a href="https://functionalstoneware.com/contact">functionalstoneware.com</a>.</p>
+			<p>{{ formatted }}</p>
+		</section>
+
+		<footer>
+			<div>
+				{{ time }}
+			</div>
+		</footer>
+
+	</body>
+</html>

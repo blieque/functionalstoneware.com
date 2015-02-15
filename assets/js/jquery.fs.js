@@ -66,7 +66,7 @@ function formSvg(d) {							// svg (0 or 1)
 $(function(){
 
 	$("[type='submit']").click(function(){
-		$.post("contact","a=s&" + $("form").serialize(),formSubmit);
+		$.post("contact","action=submit&" + $("form").serialize(),formSubmit);
 	});
 
 	$("input,textarea").focus(function(){

@@ -46,7 +46,7 @@ body {
 	min-height:calc(100vh - 65px);
 	position:relative;
 	color:#282828;
-	font-family:"source sans pro",helvetica neue,lucida sans,sans-serif;
+	font-family:source sans pro,helvetica neue,lucida sans,sans-serif;
 	font-weight:normal;
 	text-align:justify;
 }
@@ -64,7 +64,7 @@ textarea,input,form>div { /* both styled as textarea, overriden later */
 	margin:0;
 	padding:16px;
 	width:calc(100% - 34px);
-	border:solid 1px #ebebeb;
+	border:solid 1px #e1e1e1;
 	background:#fff;
 	font-family:inherit;
 	font-size:inherit;
@@ -94,6 +94,7 @@ form>div { /* submit buttons */
 	max-width:100%;
 	text-align:center;
 	background:none;
+	border:solid 1px #cdcdcd;
 }
 
 /* header */
@@ -102,7 +103,7 @@ header { /* fixed header; navigation, social */
 	position:fixed;
 	top:0;
 	background:#fff;
-	border:solid 0 #ebebeb;
+	border:solid 0 #e1e1e1;
 	border-width:0 0 1px 0;
 	line-height:0;
 	box-shadow:0 4px 0 0 rgba(0,0,0,.02);
@@ -171,7 +172,7 @@ footer { /* footer of page (license info) */
 	right:0;
 	bottom:0;
 	left:0;
-	background:#ebebeb;
+	background:#e1e1e1;
 	font-size:80%;
 }
 
