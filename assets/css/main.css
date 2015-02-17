@@ -2,7 +2,7 @@
 ._placehold {
 	margin:16px 0 0;
 	padding:40px;
-	background-color:#eee;
+	background:#eee;
 	height:320px;
 	-webkit-box-sizing:border-box;
 	box-sizing:border-box;
@@ -72,9 +72,9 @@ textarea,input,form>div { /* both styled as textarea, overriden later */
 }
 textarea:focus,input:focus { /* both text boxes (focus state) */
 	outline:none;
-	background:none;
+	background:#fff;
 }
-textarea { /* big tet boxes */
+textarea { /* big text boxes */
 	margin:16px 0 0;
 	resize:vertical;
 }
@@ -84,6 +84,12 @@ textarea { /* big tet boxes */
 }
 [type="text"]:first-child { /* 'name' boxes */
 	margin-right:16px;
+}
+[type="text"]:-webkit-autofill { /* autofill'd input boxes */
+	box-shadow:inset 0 0 0 30px #f5f5f5;
+}
+[type="text"]:-webkit-autofill:focus { /* autofill'd input boxes */
+	box-shadow:inset 0 0 0 30px #fff;
 }
 form>div { /* submit buttons */
 	display:block;
@@ -95,6 +101,17 @@ form>div { /* submit buttons */
 	text-align:center;
 	background:none;
 	border:solid 1px #cdcdcd;
+}
+blockquote {
+	margin:1em 0;
+	padding:1.8em;
+	background:#f5f5f5;
+}
+blockquote :first-child {
+	margin-top:0;
+}
+blockquote :last-child {
+	margin-bottom:0;
 }
 
 /* header */
@@ -194,7 +211,7 @@ section:not(:last-of-type) p,header nav,section:last-of-type,footer p { /* eleme
 	border-bottom:dotted 1px #17708f;
 }
 .l:hover { /* hover state of styled anchors */
-	background-color:rgba(0,0,0,.05);
+	background:rgba(0,0,0,.05);
 }
 header a,#s path,input,textarea {
 	-webkit-transition:all ease .12s;

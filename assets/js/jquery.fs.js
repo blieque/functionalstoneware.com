@@ -1,9 +1,9 @@
 /*
  *	JavaScript for Functional Stoneware
- *	Created by Blieque Mariguan <himself [at] blieque [dot] co [dot] uk>
+ *	Created by Blieque Mariguan <himself [at] blieque.co.uk>
  *	Licensed under GPL v3
  *
- *	https://github.com/blieque/functionalstoneware.com/
+ *	https://github.com/blieque/functionalstoneware.com
  *	https://gnu.org/licenses/gpl.html
  *
  */
@@ -12,19 +12,15 @@
 var formStatus;
 
 // functions
-function formSubmit(d,s) {							// data, status
+function formSubmit(d, s) {							// data, status
 
-	console.log(d);
 	if (d != 0) {									// error in form
 
-		console.log("d donna equal zero");
 		var c = [										// array depending on errors for use in for loop
 			/1/.test(d) ? "e" : "",
 			/2/.test(d) ? "e" : "",
 			/3/.test(d) ? "e" : ""
 		];
-		console.log(c,d);
-		console.log("removin' class 'e'", d);
 
 		$(".e").removeClass("e");						// clear old red borders on inputs
 
@@ -38,8 +34,8 @@ function formSubmit(d,s) {							// data, status
 
 		var dal = formStatus ? 27 : 38;					// dash-array limit
 
-		$("form path").animate({opacity:0},100,function(){	// fade out over 100ms
-			$("form path").css({"stroke-dasharray":"0 40","opacity":1});	// dash-array and opacity reset 
+		$("form path").animate({opacity:0}, 100, function(){	// fade out over 100ms
+			$("form path").css({"stroke-dasharray":"0 40", "opacity":1});	// dash-array and opacity reset 
 			formSvg(d);										// call svg function
 		});
 
@@ -53,12 +49,12 @@ function formSubmit(d,s) {							// data, status
 
 }
 
-function formSvg(d) {							// svg (0 or 1)
+function formSvg(d) {							// which svg; 0 or 1?
 
-	var dal = d ? 27 : 38,							// dash-array limit
+	var dal  = d ? 27 : 38,							// dash-array limit
 		path = d ? "#r" : "#g";						// path id (red or green)
 
-	$(path).css("stroke-dasharray",dal + " 40");	// progess the stroke/move to next frame
+	$(path).css("stroke-dasharray", dal + " 40");	// progess the stroke/move to next frame
 
 }
 
@@ -66,7 +62,7 @@ function formSvg(d) {							// svg (0 or 1)
 $(function(){
 
 	$("[type='submit']").click(function(){
-		$.post("contact","action=submit&" + $("form").serialize(),formSubmit);
+		$.post("contact", "action=submit&" + $("form").serialize(), formSubmit);
 	});
 
 	$("input,textarea").focus(function(){
