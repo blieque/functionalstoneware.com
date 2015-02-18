@@ -10,12 +10,10 @@
  *
  */
 
-include "../includes/builder.php";
-fs_open("Shop");
+include '../includes/builder.php';
+fs_open('Shop');
 
 ?>
-
-<h2>Products</h2>
 
 <?php
 

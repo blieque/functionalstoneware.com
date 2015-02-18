@@ -10,8 +10,8 @@
  *
  */
 
-include "../includes/builder.php";
-fs_open("About");
+include '../includes/builder.php';
+fs_open('About');
 
 ?>
 

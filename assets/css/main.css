@@ -202,6 +202,19 @@ footer { /* footer of page (license info) */
 
 /* shared classes, specific styles */
 
+section:not(:last-of-type) p,header nav,section:last-of-type,footer p { /* elements to assume 80% width */
+	margin:0 auto;
+	width:80%;
+	max-width:1248px;
+}
+header a,#s path,input,textarea {
+	-webkit-transition:all ease .12s;
+	transition:all ease .12s;
+}
+
+.c {
+	box-shadow:inset 0 0 0 4px rgba(0,0,0,.04);
+}
 :focus {
 	outline:none;
 }
@@ -229,15 +242,6 @@ img.r {
 	content:"";
 	display:block;
 	clear:both;
-}
-section:not(:last-of-type) p,header nav,section:last-of-type,footer p { /* elements to assume 80% width */
-	margin:0 auto;
-	width:80%;
-	max-width:1248px;
-}
-header a,#s path,input,textarea {
-	-webkit-transition:all ease .12s;
-	transition:all ease .12s;
 }
 .e { /* form errors */
 	border-color:#c34534;

@@ -10,14 +10,22 @@
  *
  */
 
-include "../includes/builder.php";
-fs_open("Gallery");
+include '../includes/builder.php';
+fs_open('Gallery');
 
-?>
+for ($i = 1; $i <= 85; $i++) {
 
+	$id;
 
+	if ($i < 10) {
+		$id = '0' . $i;
+	} else {
+		$id = $i;
+	}
 
-<?php
+	echo "<a href=\"/assets/img/full/$id.jpg\"><img src=\"/assets/img/thumb/$id.jpg\"></a>";
+
+}
 
 fs_close();
 
