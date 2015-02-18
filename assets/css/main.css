@@ -8,17 +8,17 @@
 	box-sizing:border-box;
 }
 ._placehold:before {
-	content:"This is a large block to mimic wrap :)";
+	content:"This is a large block to mimic copy :)";
 	color:#222;
 }
 
 /*
- *	Main stylesheet for Functional Stoneware
- *	Created by Blieque Mariguan <himself [at] blieque [dot] co [dot] uk>
- *	Licensed under GPL v3
+ * Main stylesheet for Functional Stoneware
+ * @author    Blieque Mariguan <himself [at] blieque.co.uk>
+ * @copyright licensed under GPL v3
  *
- *	https://github.com/blieque/functionalstoneware.com/
- *	https://gnu.org/licenses/gpl.html
+ * https://github.com/blieque/functionalstoneware.com/
+ * https://gnu.org/licenses/gpl.html
  *
  */
 
@@ -64,7 +64,7 @@ textarea,input,form>div { /* both styled as textarea, overriden later */
 	margin:0;
 	padding:16px;
 	width:calc(100% - 34px);
-	border:solid 1px #e1e1e1;
+	border:solid 1px #cdcdcd;
 	background:#fff;
 	font-family:inherit;
 	font-size:inherit;
@@ -91,6 +91,9 @@ textarea { /* big text boxes */
 [type="text"]:-webkit-autofill:focus { /* autofill'd input boxes */
 	box-shadow:inset 0 0 0 30px #fff;
 }
+.e:-webkit-autofill { /* erroneous autofill'd input boxes */
+	box-shadow:0 0 0 4px rgba(195,69,52,.25),inset 0 0 0 30px #f5f5f5;
+}
 form>div { /* submit buttons */
 	display:block;
 	margin:12px auto 0;
@@ -101,6 +104,10 @@ form>div { /* submit buttons */
 	text-align:center;
 	background:none;
 	border:solid 1px #cdcdcd;
+	cursor:pointer;
+}
+form>div:hover,form>div:focus { /* submit buttons */
+	box-shadow:inset 0 0 0 4px rgba(0,0,0,.04);
 }
 blockquote {
 	margin:1em 0;
@@ -138,7 +145,7 @@ header a { /* all header links */
 	border-width:0 1px;
 }
 header a:hover { /* all but last nav li */
-	box-shadow:0 0 0 8px rgba(0,0,0,.04) inset;
+	box-shadow:inset 0 0 0 8px rgba(0,0,0,.04);
 }
 #h { /* logotype */
 	padding:16px 32px;
@@ -193,9 +200,31 @@ footer { /* footer of page (license info) */
 	font-size:80%;
 }
 
-
 /* shared classes, specific styles */
 
+:focus {
+	outline:none;
+}
+.l { /* styled anchors */
+	margin-right:2px;
+	color:#17708f;
+	border-bottom:dotted 1px #17708f;
+}
+.l:hover { /* hover state of styled anchors */
+	background:rgba(0,0,0,.05);
+}
+.l:focus { /* when tabbing through links */
+	background:#b0e1f2;
+	border:1px solid #74bad2;
+}
+header a:focus:not(:hover) {
+	background:#b0e1f2;
+	box-shadow:inset 0 0 0 4px #74bad2;
+}
+img.r {
+	margin:1em 0 2em 2em;
+	float:right;
+}
 .cf:after { /* clearfix */
 	content:"";
 	display:block;
@@ -205,13 +234,6 @@ section:not(:last-of-type) p,header nav,section:last-of-type,footer p { /* eleme
 	margin:0 auto;
 	width:80%;
 	max-width:1248px;
-}
-.l { /* styled anchors */
-	color:#17708f;
-	border-bottom:dotted 1px #17708f;
-}
-.l:hover { /* hover state of styled anchors */
-	background:rgba(0,0,0,.05);
 }
 header a,#s path,input,textarea {
 	-webkit-transition:all ease .12s;
@@ -238,8 +260,8 @@ form svg { /* form submit svg */
 	stroke-linecap:round;
 	stroke-linejoin:round;
 	stroke-dasharray:0 40;
-	-webkit-transition:all ease .5s;
-	transition:all ease .5s;
+	-webkit-transition:stroke-dasharray ease .5s;
+	transition:stroke-dasharray ease .5s;
 }
 #g {
 	stroke:#b0cf49;

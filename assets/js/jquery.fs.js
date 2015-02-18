@@ -1,72 +1,111 @@
 /*
- *	JavaScript for Functional Stoneware
- *	Created by Blieque Mariguan <himself [at] blieque.co.uk>
- *	Licensed under GPL v3
+ * Front-end JavaScript for Functional Stoneware
+ * @author    Blieque Mariguan <himself [at] blieque.co.uk>
+ * @copyright licensed under GPL v3
  *
- *	https://github.com/blieque/functionalstoneware.com
- *	https://gnu.org/licenses/gpl.html
+ * https://github.com/blieque/functionalstoneware.com
+ * https://gnu.org/licenses/gpl.html
  *
  */
 
 // variables
-var formStatus;
+var formFirstSubmit = true;
 
 // functions
-function formSubmit(d, s) {							// data, status
+function formSubmit(d, s) {	// data, status
 
-	if (d != 0) {									// error in form
+	// if no error(s) in form
+	if (d == '0') {
 
-		var c = [										// array depending on errors for use in for loop
-			/1/.test(d) ? "e" : "",
-			/2/.test(d) ? "e" : "",
-			/3/.test(d) ? "e" : ""
+		$('input,textarea').delay(500)					// wait a bit
+						   .animate({opacity:0}, 500,	// fade fields out
+						   	function() {				// clear fields
+								$('input,textarea').val('');					
+						   	});
+		$('input,textarea').delay(200)					// wait a bit (less)
+						   .animate({opacity:1},500);	// fade back in
+
+		setTimeout(function(){
+			// fade submit button out over 100ms
+			$('form path').animate({opacity:0}, 1000, function(){
+				// dash-array
+				$('form path').css('stroke-dasharray','0 40');
+				setTimeout(function(){
+					// opacity reset
+					$('form path').css('opacity','1');
+				}, 500)
+			});
+		},5000);
+
+	// if error(s) in form
+	} else {
+
+		// create array for use in for loop
+		var c = [
+			/1/.test(d) ? 'e' : '',
+			/2/.test(d) ? 'e' : '',
+			/3/.test(d) ? 'e' : ''
 		];
 
-		$(".e").removeClass("e");						// clear old red borders on inputs
+		// clear old red borders on inputs
+		$('.e').removeClass('e');
 
-		for (var i = 0; i < 3; i++) {					// make inputs red
-			$("form *").eq(i).addClass(c[i]);				// add error class to input(s)
+		// make inputs red
+		for (var i = 0; i < 3; i++) {
+			// add error class to input(s)
+			$('form *').eq(i).addClass(c[i]);
 		}
 
 	}
 
-	if (formStatus || formStatus == 0) {			// if box ticked/crossed before
+	// if the form has been submitted before
+	if (!formFirstSubmit) {
 
-		var dal = formStatus ? 27 : 38;					// dash-array limit
-
-		$("form path").animate({opacity:0}, 100, function(){	// fade out over 100ms
-			$("form path").css({"stroke-dasharray":"0 40", "opacity":1});	// dash-array and opacity reset 
-			formSvg(d);										// call svg function
+		// fade submit button out over 100ms
+		$('form path').animate({opacity:0}, 100, function(){
+			// dash-array
+			$('form path').css('stroke-dasharray','0 40');
+			setTimeout(function(){
+				// opacity reset
+				$('form path').css('opacity','1');
+				// call svg function
+				formSvg(d);
+			}, 500)
 		});
 
 	} else {
 
-		formSvg(d);										// call svg function
+		// call svg function
+		formSvg(d);
+
+		formFirstSubmit = false;
 
 	}
 
-	formStatus = d ? 0 : 1;							// update last form result variable
-
 }
 
-function formSvg(d) {							// which svg; 0 or 1?
+// which svg; 0 or 1?
+function formSvg(d) {
 
-	var dal  = d ? 27 : 38,							// dash-array limit
-		path = d ? "#r" : "#g";						// path id (red or green)
+	success  = d == '0';
 
-	$(path).css("stroke-dasharray", dal + " 40");	// progess the stroke/move to next frame
+	var dal  = success ? 38 : 27,     // dash-array limit
+		path = success ? '#g' : '#r'; // path id (red or green)
+
+	// change stroke dash lengths
+	$(path).css('stroke-dasharray', dal + ' 40');
 
 }
 
 // jQ call
 $(function(){
 
-	$("[type='submit']").click(function(){
-		$.post("contact", "action=submit&" + $("form").serialize(), formSubmit);
+	$('[type="submit"]').click(function(){
+		$.post('contact', 'action=submit&' + $('form').serialize(), formSubmit);
 	});
 
-	$("input,textarea").focus(function(){
-		$(this).removeClass("e");
+	$('input,textarea').focus(function(){
+		$(this).removeClass('e');
 	});
 
 });

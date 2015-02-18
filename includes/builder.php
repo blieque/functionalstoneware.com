@@ -1,12 +1,12 @@
 <?php
 
 /*
- *	Template script for Functional Stoneware
- *	Created by Blieque Mariguan <himself [at] blieque [dot] co [dot] uk>
- *	Licensed under GPL v3
+ * Template script for Functional Stoneware
+ * @author    Blieque Mariguan <himself [at] blieque.co.uk>
+ * @copyright licensed under GPL v3
  *
- *	https://github.com/blieque/functionalstoneware.com/
- *	https://gnu.org/licenses/gpl.html
+ * https://github.com/blieque/functionalstoneware.com/
+ * https://gnu.org/licenses/gpl.html
  *
  */
 
@@ -59,7 +59,7 @@ function fs_close() { // close tags opened in the fs_open() function
 
 ?>
 
-</section><footer><p>Licensed under GPL v3 and Creative Commons BY-NC-SA <a class="l" href="about#license">(details)</a></p></footer></body></html>
+</section><footer><p>Licensed under GPL v3 and Creative Commons BY-NC-SA (<a class="l" href="about#license">details</a>)</p></footer></body></html>
 
 <?php
 
