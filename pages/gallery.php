@@ -10,7 +10,7 @@
  *
  */
 
-include '../includes/builder.php';
+include __DIR__ . '/../includes/builder.php';
 fs_open('Gallery');
 
 for ($i = 1; $i <= 85; $i++) {

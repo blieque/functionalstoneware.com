@@ -100,7 +100,7 @@ function formSvg(d) {
 // jQ call
 $(function(){
 
-	$('[type="submit"]').click(function(){
+	$('button#fs').click(function(){
 		$.post('contact', 'action=submit&' + $('form').serialize(), formSubmit);
 	});
 

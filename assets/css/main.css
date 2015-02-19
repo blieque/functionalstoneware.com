@@ -53,16 +53,16 @@ body {
 h1,h2,h3 {
 	margin:0;
 }
-a,form>div {
+a,form>div,button {
 	font-style:italic;
 }
 a {
 	color:inherit;
 	text-decoration:none;
 }
-textarea,input,form>div { /* both styled as textarea, overriden later */
+textarea,input,form>div,button { /* both styled as textarea, overriden later */
 	margin:0;
-	padding:16px;
+	padding:1em;
 	width:calc(100% - 34px);
 	border:solid 1px #cdcdcd;
 	background:#fff;
@@ -70,7 +70,7 @@ textarea,input,form>div { /* both styled as textarea, overriden later */
 	font-size:inherit;
 	background:#f5f5f5;
 }
-textarea:focus,input:focus { /* both text boxes (focus state) */
+textarea:focus,input:focus,button:focus { /* both text boxes (focus state) */
 	outline:none;
 	background:#fff;
 }
@@ -94,7 +94,7 @@ textarea { /* big text boxes */
 .e:-webkit-autofill { /* erroneous autofill'd input boxes */
 	box-shadow:0 0 0 4px rgba(195,69,52,.25),inset 0 0 0 30px #f5f5f5;
 }
-form>div { /* submit buttons */
+form>div,button { /* submit buttons */
 	display:block;
 	margin:12px auto 0;
 	position:relative;
@@ -106,7 +106,7 @@ form>div { /* submit buttons */
 	border:solid 1px #cdcdcd;
 	cursor:pointer;
 }
-form>div:hover,form>div:focus { /* submit buttons */
+button:hover,button:focus { /* form buttons */
 	box-shadow:inset 0 0 0 4px rgba(0,0,0,.04);
 }
 blockquote {
@@ -131,6 +131,7 @@ header { /* fixed header; navigation, social */
 	border-width:0 0 1px 0;
 	line-height:0;
 	box-shadow:0 4px 0 0 rgba(0,0,0,.02);
+	z-index:2;
 }
 header nav { /* main nav element */
 	border:inherit;
@@ -139,7 +140,7 @@ header nav { /* main nav element */
 header a { /* all header links */
 	display:inline-block;
 	margin:0 -1px 0 0;
-	padding:32px;
+	padding:2em;
 	float:left;
 	border:inherit;
 	border-width:0 1px;
@@ -187,6 +188,10 @@ section:first-of-type {	/* first element after header */
 section:last-of-type :first-child { /* first child of content element */
 	margin-top:0;
 }
+button {
+	color:inherit;
+	z-index:1;
+}
 
 /* footer */
 footer { /* footer of page (license info) */
@@ -200,6 +205,39 @@ footer { /* footer of page (license info) */
 	font-size:80%;
 }
 
+/* shop stuff */
+
+.si {
+	display:inline-block;
+	margin:0 1em 1em 0;
+	padding:1em;
+	width:calc(50% - .5em - 2px);
+	border:1px solid #e1e1e1;
+	text-align:left;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+}
+.si:nth-child(even) {
+	margin-right:0;
+}
+.si article {
+	vertical-align:top;
+	display:inline-block;
+	width:calc(100% - 180px - 1em);
+}
+.si img {
+	display:inline-block;
+	margin:0 1em 0 0;
+}
+.si h2 {
+	margin-top:0;
+}
+.si button {
+	display:inline-block;
+	margin:0;
+	width:65%;
+}
+
 /* shared classes, specific styles */
 
 section:not(:last-of-type) p,header nav,section:last-of-type,footer p { /* elements to assume 80% width */
@@ -207,7 +245,7 @@ section:not(:last-of-type) p,header nav,section:last-of-type,footer p { /* eleme
 	width:80%;
 	max-width:1248px;
 }
-header a,#s path,input,textarea {
+header a,#s path,input,textarea,button {
 	-webkit-transition:all ease .12s;
 	transition:all ease .12s;
 }

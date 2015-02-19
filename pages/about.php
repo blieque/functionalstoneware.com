@@ -10,7 +10,7 @@
  *
  */
 
-include '../includes/builder.php';
+include __DIR__ . '/../includes/builder.php';
 fs_open('About');
 
 ?>
