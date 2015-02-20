@@ -9,9 +9,14 @@
  */
 
 // variables
-var formFirstSubmit = true;
+
+var formFirstSubmit = true,
+	basketOpen		= false,
+	basket			= [],
+	lastData;
 
 // functions
+
 function formSubmit(d, s) {	// data, status
 
 	// if no error(s) in form
@@ -84,8 +89,7 @@ function formSubmit(d, s) {	// data, status
 
 }
 
-// which svg; 0 or 1?
-function formSvg(d) {
+function formSvg(d) { // which svg; 0 or 1?
 
 	success  = d == '0';
 
@@ -97,15 +101,84 @@ function formSvg(d) {
 
 }
 
+function formatPrice(inCents) {
+
+	priceDiv = inCents / 100;
+	price    = priceDiv.toString();
+
+	lengthInt = inCents.toString().length;
+	lengthDiv = price.length;
+
+	if (lengthDiv == lengthInt - 2) {
+		price += ".00";
+	} else if (lengthDiv == lengthInt) {
+		price += "0";
+	}
+
+	return '$' + price;
+
+}
+
+function toggleBasket() {
+
+	if (basketOpen) {
+		$('#sb div').slideUp(200);
+	} else {
+		$('#sb div').slideDown(200);
+	}
+
+	basketOpen = !basketOpen;
+
+}
+
+function proceed() {
+
+}
+
+function addToBasket() {
+
+	// get id of item
+	var split  = location.pathname.split('/'),
+		itemId = parseInt(split[split.length - 1], 10);
+
+	$.get(location.origin + '/data', {id: itemId}, function(d) {
+
+		data   = JSON.parse(d);
+		name   = data[0];
+		price  = data[1];
+		priceF = formatPrice(price);
+
+	});
+
+}
+
+function updateBasket() {
+
+}
+
+function init() {
+
+	$('#sb div').slideUp(0);
+
+}
+
 // jQ call
 $(function(){
-
-	$('button#fs').click(function(){
-		$.post('contact', 'action=submit&' + $('form').serialize(), formSubmit);
-	});
 
 	$('input,textarea').focus(function(){
 		$(this).removeClass('e');
 	});
+
+	$('#fs').click(function(){
+		$.post('contact', 'action=submit&' + $('form').serialize(), formSubmit);
+	});
+
+	$('#sb>a').click(toggleBasket);
+
+	$('#sb-p').click(proceed);
+
+	$('#sip-a').click(addToBasket);
+
+	init();
 
 });

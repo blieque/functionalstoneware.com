@@ -47,5 +47,3 @@ fs_open('About');
 <?php
 
 fs_close();
-
-?>

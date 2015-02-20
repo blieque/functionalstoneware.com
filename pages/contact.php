@@ -129,12 +129,10 @@ if (isset($_POST['action']) && $_POST['action'] == 'submit') {
 <form method="post">
 	<input name="name" placeholder="Name" type="text" tabindex="1"><input name="email" placeholder="Email Address" type="text" tabindex="2">
 	<textarea name="message" placeholder="Message" rows="12" autocomplete="off" tabindex="3"></textarea>
-	<button id="fs" tabindex="4">SUBMIT<svg width="32" height="24"><path id="r" d="M11 3L29 21M29 3L11 21"/><path id="g" d="M3 13L11 21L29 3"/></svg></button>
+	<a id="fs" class="b" tabindex="4">SUBMIT<svg width="32" height="24"><path id="r" d="M11 3L29 21M29 3L11 21"/><path id="g" d="M3 13L11 21L29 3"/></svg></a>
 </form>
 
 <?php
 
 	fs_close();
 }
-
-?>
