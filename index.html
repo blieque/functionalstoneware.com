@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Functional Stoneware Documentation</title>
+		<link rel="stylesheet" href="https://blieque.github.io/projects/main.css">
+		<!-- <link rel="stylesheet" href="main.css"> -->
+		<link rel="shortcut icon" href="https://blieque.github.io/functionalstonware.com/favicon.ico">
+		<script>
+		if (window.location.protocol != 'https:') {
+			window.location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+		}
+		</script>
+	</head>
+	<body>
+		<section>
+			<h1>Functional Stoneware Project</h1>
+			<p>The following is a suggested <a href="https://nginx.org/">nginx</a> web-server configuration block. If you clone the repo somewhere else or wish to use another hostname, change the configuration. Don't forget to change your hosts file (<code>/etc/hosts</code> in Linux) to point the hostname to the right IP.</p>
+			<pre><div>/etc/nginx/sites-available/local.functionalstoneware.conf</div>server {
+    root /srv/hosts/local.functionalstoneware/www;
+    server_name functionalstoneware.local;
+
+    rewrite /about /about.php;
+    rewrite /contact /contact.php;
+    rewrite /gallery /gallery.php;
+    rewrite ^/shop/([0-9]+)$ /shop.php?id=$1 break;
+    rewrite /shop /shop.php;
+    rewrite /data /../includes/data.php;
+}</pre>
+			<p>You'll also want something like the following in your global nginx configuration.</p>
+			<pre><div>/etc/nginx/nginx.conf</div>location ~ \.php$ {
+    fastcgi_split_path_info ^(.+\.php)(/.+)$;
+    fastcgi_pass unix:/var/run/php5-fpm.sock;
+    fastcgi_index index.php;
+    include fastcgi_params;
+}</pre>
+		</section>
+		<footer>
+			<a href="https://functionalstoneware.com/">Live website</a><br>
+			<a href="https://github.com/blieque/functionalstoneware.com">GitHub repository</a>
+		</footer>
+	</body>
+</html>
