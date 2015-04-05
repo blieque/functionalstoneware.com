@@ -26,13 +26,13 @@
 /* web typography */
 
 @font-face {
-	font-family:'Source Sans Pro';
+	font-family:'source sans pro';
 	font-style:normal;
 	font-weight:400;
 	src:local('Source Sans Pro'),local('SourceSansPro-Regular'),url(https://fonts.gstatic.com/s/sourcesanspro/v8/ODelI1aHBYDBqgeIAH2zlBM0YzuT7MdOe03otPbuUS0.woff) format('woff');
 }
 @font-face {
-	font-family:'Source Sans Pro';
+	font-family:'source sans pro';
 	font-style:normal;
 	font-weight:700;
 	src:local('Source Sans Pro Bold'),local('SourceSansPro-Bold'),url(https://fonts.gstatic.com/s/sourcesanspro/v8/toadOcfmlt9b38dHJxOBGFkQc6VGVFSmCnC_l7QZG60.woff) format('woff');
@@ -295,7 +295,7 @@ footer { /* footer of page (license info) */
 	-webkit-box-sizing:border-box;
 	box-sizing:border-box;
 }
-.si:nth-of-type(odd) {
+.si:nth-of-type(even) {
 	margin-right:0;
 }
 .si img {
@@ -346,7 +346,7 @@ section:not(:last-of-type) p,header nav,section:last-of-type,footer p {
 	min-width:920px;
 	max-width:1248px;
 }
-header a,#s path,input,textarea,.b,#sb-p svg {
+header a,path,input,textarea,.b,#sb-p svg {
 	/* transitions on a bunch of interface elements */
 	-webkit-transition:all ease .2s;
 	transition:all ease .2s;

@@ -13,6 +13,7 @@
 var formFirstSubmit = true,
 	basketOpen		= false,
 	basket			= [],
+	intIds 			= [],
 	lastData;
 
 // functions
@@ -119,14 +120,52 @@ function formatPrice(inCents) {
 
 }
 
-function toggleBasket() {
+function toggleBasket(e) {
 
-	if (basketOpen) {
+	target = $(e.target);
+
+	// close basket
+	if (basketOpen &&
+		target.is('#sb>div,#sb>div a,#sb>div ul,#sb>div li') === false) {
+
 		$('#sb div').slideUp(200);
-	} else {
+		opening = false;
+
+	// open basket
+	} else if(target.is('#sb>a,#sb>a>svg,#sb>a>svg>path,#sb>a>span')) {
+
 		$('#sb div').slideDown(200);
+		opening = true;
+
+	} else {
+		return;
 	}
 
+	i = 0;
+	elem = $('#sb>a path');
+	vals = [[12, 2, 12, 2], [2, 12, 2, -2]]; // up arrow, down arrow
+	to = opening ? vals[1] : vals[0];
+	from = opening ? vals[0] : vals[1];
+
+	intIds.push(setInterval(function(){
+
+		from[0] += to[3];
+		from[1] -= to[3];
+		from[2] += to[3];
+
+		elem.attr('d', 'M2 ' + from[0] +
+					   'L12 ' + from[1] +
+					   'L22 ' + from[2]);
+
+		if (from[2] == to[2]) {
+			intIds.forEach(clearInterval);
+			intIds = [];
+		}
+
+		i++;
+
+	}, 71)); // 24 fps
+	
 	basketOpen = !basketOpen;
 
 }
@@ -173,11 +212,11 @@ $(function(){
 		$.post('contact', 'action=submit&' + $('form').serialize(), formSubmit);
 	});
 
-	$('#sb>a').click(toggleBasket);
-
 	$('#sb-p').click(proceed);
 
 	$('#sip-a').click(addToBasket);
+
+	$('body').click(toggleBasket);
 
 	init();
 

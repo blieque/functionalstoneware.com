@@ -12,9 +12,12 @@
 
 include __DIR__ . '/../includes/builder.php';
 include __DIR__ . '/../includes/functions.php';
-include __DIR__ . '/../../../../common/private.php';
+include __DIR__ . '/../../../common/private.php';
 
-$mysqli = new mysqli('localhost', $mysql_read_un, $mysql_read_pw, 'functionalstoneware');
+$mysqli = new mysqli('localhost',
+			$mysql_read_un,
+			$mysql_read_pw,
+			'functionalstoneware');
 mysqli_error_report($mysqli->connect_errno, $mysqli->connect_error);
 
 $inventory_q = $mysqli->query('SELECT * FROM `shop`'); // select all the things
@@ -35,13 +38,18 @@ if (isset($_GET['id'])) {
 	fs_open('Shop');
 }
 
-
 ?>
 
 <div id="sb">
-	<a class="b"><svg width="24" height="14"><path d="M2 12l10 -10l10 10"/></svg>BASKET<span>0 items</span></a>
+	<a class="b">
+		<svg width="24" height="14">
+			<path d="M2 12L12 2L22 12"/>
+		</svg>BASKET<span>0 items</span>
+	</a>
 	<div>
-		<a id="sb-p" class="sb-pi">PROCEED<svg width="9" height="14"><path d="M2 2l5 5l-5 5"/></svg></a>
+		<a id="sb-p" class="sb-pi">PROCEED<svg width="9" height="14">
+			<path d="M2 2l5 5l-5 5"/>
+		</svg></a>
 		<ul>
 			<li id="sb-n">No items</li>
 		</ul>
@@ -55,7 +63,7 @@ if (isset($_GET['id'])) {
 	exit();
 }
 
-$img_dir = '/assets/img/thumb/';
+$img_dir = 'assets/img/thumb/';
 
 foreach ($inventory as $item) {
 
@@ -68,21 +76,22 @@ foreach ($inventory as $item) {
 
 	$price = format_price($item[2]);
 
-	# foramt thumbnail and item urls
+	# format thumbnail and item urls
 
 	$images = explode(',', $item[4]);
 	$first_image = zero_pad($images[0], $last_img_digits);
 	$img_src = $img_dir . 'no-img.svg';
 
-	if (file_exists('..' . $img_dir . $first_image . '.jpg')) {
+	if (file_exists($img_dir . $first_image . '.jpg')) {
 		$img_src = $img_dir . $first_image . '.jpg';
 	}
 
 	$host     = get_host();
-	$img_src  = $host . $img_src;
+	$img_src  = $host . '/' . $img_src;
 	$item_url = $host . "/shop/$item[0]";
 
-	echo "<div class=\"si\"><a href=\"$item_url\"><img src=\"$img_src\"></a><article><a href=\"$item_url\"><h2>$item[1]</h2></a><em>$price</em><p>$item[3]</p><a href=\"$item_url\" class=\"b\">VIEW ITEM</a></article></div>";
+	echo "<a class=\"si\" href=\"$item_url\"><img src=\"$img_src\"><article><" .
+		 "h2>$item[1]</h2><em>$price</em><p>$item[3]</p></article></a>";
 
 }
 

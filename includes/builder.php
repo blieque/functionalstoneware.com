@@ -31,15 +31,14 @@ function fs_open($title = '') { // opener/head function, declare recieved variab
 ?>
 <!DOCTYPE html><html><head>
 	<title><?php echo $title ?>Functional Stoneware</title>
-	<link rel="shortcut icon" href="/img/favicon.ico" />
+	<link rel="shortcut icon" href="/favicon.ico" />
 	<?php $assets_url = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['SERVER_NAME'] . '/assets/' ?>
 	<link rel="stylesheet" href="<?php echo $assets_url?>css/main.css">
 	<link rel="stylesheet" href="<?php echo $assets_url?>css/tablet.css" media="(max-device-width:27.5cm) or (max-device-width:1100px)">
 	<link rel="stylesheet" href="<?php echo $assets_url?>css/smartphone.css" media="(max-device-width:16cm) or (max-device-width:720px)">
 	<link rel="stylesheet" href="<?php echo $assets_url?>css/print.css" media="print">
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-	<!--<script src="<?php echo $assets_url ?>js/jquery.min.js"></script>-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="<?php echo $assets_url ?>js/jquery.fs.js"></script>
 	<script>if(window.location.host=='functionalstoneware.com'){alert('This website is under development. If you wish to contact Rhiain, please follow the Facebook page link at the top of the page.')}</script>
 </head>
@@ -47,10 +46,10 @@ function fs_open($title = '') { // opener/head function, declare recieved variab
 	<header>
 		<nav>
 			<a id="h" href="/">FUNCTIONAL<br><span>STONEWARE</span></a>
-			<a <?php echo $pages_class[1] ?>href="about">ABOUT</a>
-			<a <?php echo $pages_class[2] ?>href="contact">CONTACT</a>
-			<a <?php echo $pages_class[3] ?>href="gallery">GALLERY</a>
-			<a <?php echo $pages_class[4] ?>href="shop">SHOP</a>
+			<a <?php echo $pages_class[1] ?>href="/about">ABOUT</a>
+			<a <?php echo $pages_class[2] ?>href="/contact">CONTACT</a>
+			<a <?php echo $pages_class[3] ?>href="/gallery">GALLERY</a>
+			<a <?php echo $pages_class[4] ?>href="/shop">SHOP</a>
 			<a <?php echo $pages_class[5] ?>href="//blog.functionalstoneware.com">BLOG</a>
 			<div id="s">
 				<a id="f" href="https://www.facebook.com/rhiainnathansonpottery"><svg width="32" height="32"><path d="M30.2 0H1.8C0.8 0 0 0.8 0 1.8v28.5c0 1 0.8 1.8 1.8 1.8H17.1V19.6h-4.2v-4.8h4.2v-3.6c0-4.1 2.5-6.4 6.2-6.4 1.8 0 3.3 0.2 3.7 0.2v4.3l-2.6 0c-2 0-2.4 1-2.4 2.4v3.1h4.8l-0.6 4.8H22V32h8.2c1 0 1.8-0.8 1.8-1.8V1.8C32 0.8 31.2 0 30.2 0z"/></svg></a>
