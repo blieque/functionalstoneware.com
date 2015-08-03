@@ -1,0 +1,17 @@
+/*
+ * Tablet stylesheet for Functional Stoneware
+ * @author    Blieque Mariguan <himself@blieque.co.uk>
+ * @copyright MIT license
+ *
+ * https://github.com/blieque/functionalstoneware.com
+ *
+ */
+
+#menu {
+	width:20%;
+	height:100%;
+}
+#content {
+	left:20%;
+	width:80%;
+}

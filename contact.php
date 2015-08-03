@@ -2,11 +2,10 @@
 
 /*
  * Contact page for Functional Stoneware
- * @author    Blieque Mariguan <himself [at] blieque.co.uk>
- * @copyright licensed under GPL v3
+ * @author    Blieque Mariguan <himself@blieque.co.uk>
+ * @copyright MIT license
  *
- * https://github.com/blieque/functionalstoneware.com/
- * https://gnu.org/licenses/gpl.html
+ * https://github.com/blieque/functionalstoneware.com
  *
  */
 
@@ -33,7 +32,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'submit') {
 		exit();
 	}
 
-	include '../includes/functions.php';
+	include 'includes/functions.php';
 
 	function template_process($mail_template_path, $mail_directory, $mail_data) {
 
@@ -93,7 +92,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'submit') {
 		'time'		=> date('Y-m-d \a\t H:i:s e')
 	];
 
-	$mail_directory	= __DIR__ . '/../includes/mail/';
+	$mail_directory	= __DIR__ . '/includes/mail/';
 	$mail_template	= 'template.html';
 
 	$mail_message	= template_process($mail_template, $mail_directory, $mail_data);
@@ -121,7 +120,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'submit') {
 
 } else {
 
-	include __DIR__ . '/../includes/builder.php';
+	include __DIR__ . '/includes/builder.php';
 	fs_open('Contact');
 
 ?>

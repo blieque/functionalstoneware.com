@@ -1,4 +1,4 @@
-/* wip stuff */
+/* work-in-progress stuff */
 ._placehold {
 	margin:16px 0 0;
 	padding:40px;
@@ -14,14 +14,12 @@
 
 /*
  * Main stylesheet for Functional Stoneware
- * @author    Blieque Mariguan <himself [at] blieque.co.uk>
- * @copyright licensed under GPL v3
+ * @author    Blieque Mariguan <himself@blieque.co.uk>
+ * @copyright MIT license
  *
- * https://github.com/blieque/functionalstoneware.com/
- * https://gnu.org/licenses/gpl.html
+ * https://github.com/blieque/functionalstoneware.com
  *
  */
-
 
 /* web typography */
 
@@ -115,6 +113,11 @@ blockquote :first-child {
 blockquote :last-child {
 	margin-bottom:0;
 }
+abbr {
+	/*border-bottom:.2em solid #17708f;*/
+	text-decoration:none;
+	border-bottom:.25em solid #b2dce4;
+}
 
 /* header */
 header { /* fixed header; navigation, social */
@@ -132,11 +135,13 @@ header nav { /* main nav element */
 	border-width:0;
 }
 header a { /* all header links */
-	display:inline-block;
-	margin:0 -1px 0 0;
 	padding:2em;
 	float:left;
 	border:inherit;
+	border-width:0 0 0 1px;
+	text-transform:uppercase;
+}
+header a:last-of-type { /* last header links */
 	border-width:0 1px;
 }
 header a:hover { /* all but last nav li */
@@ -177,7 +182,7 @@ section { /* index page banner, content column */
 }
 section:not(:last-of-type) { /* index page banner */
 	height:12vh;
-	background:url(/assets/img/banner/01.jpg) 0 35%;
+	background:url(../images/banner/01.jpg) 0 35%;
 	background-size:100%;
 }
 section:first-of-type {	/* first element after header */
@@ -188,7 +193,7 @@ section:last-of-type :first-child { /* first child of content element */
 }
 
 /* footer */
-footer { /* footer of page (license info) */
+footer { /* footer of all pages */
 	padding:16px 0;
 	height:16px;
 	position:absolute;
@@ -198,6 +203,11 @@ footer { /* footer of page (license info) */
 	background:#e1e1e1;
 	font-size:80%;
 	z-index:1;
+}
+[rel="license"] { /* about page, creative commons logo */
+	margin-right:.25em;
+	position:relative;
+	top:2px;
 }
 
 /* shop stuff */
@@ -355,21 +365,21 @@ header a,path,input,textarea,.b,#sb-p svg {
 :focus { /* no more blue outlines */
 	outline:none;
 }
-.c { /* current header navigation link */
+.current { /* current header navigation link */
 	box-shadow:inset 0 0 0 4px rgba(0,0,0,.04);
 }
-header a,.l,.b { /* header, link and button anchors */
+header a,.reg-link,.b { /* header, link and button anchors */
 	font-style:italic;
 }
-.l { /* styled anchors */
+.reg-link { /* regular link/styled anchors */
 	margin-right:2px;
 	color:#17708f;
 	border-bottom:dotted 1px #17708f;
 }
-.l:hover { /* hover state of styled anchors */
+.reg-link:hover { /* hover state of styled anchors */
 	background:rgba(0,0,0,.05);
 }
-.l:focus { /* when tabbing through links */
+.reg-link:focus { /* when tabbing through links */
 	background:#b0e1f2;
 	border:1px solid #74bad2;
 }

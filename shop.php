@@ -2,16 +2,15 @@
 
 /*
  * Shop for Functional Stoneware
- * @author    Blieque Mariguan <himself [at] blieque.co.uk>
- * @copyright licensed under GPL v3
+ * @author    Blieque Mariguan <himself@blieque.co.uk>
+ * @copyright MIT license
  *
- * https://github.com/blieque/functionalstoneware.com/
- * https://gnu.org/licenses/gpl.html
+ * https://github.com/blieque/functionalstoneware.com
  *
  */
 
-include __DIR__ . '/../includes/builder.php';
-include __DIR__ . '/../includes/functions.php';
+include __DIR__ . '/includes/builder.php';
+include __DIR__ . '/includes/functions.php';
 include __DIR__ . '/../../../common/private.php';
 
 $mysqli = new mysqli('localhost',
@@ -33,7 +32,7 @@ $last_img_digits = end($last_img_digits);
 $last_img_digits = strlen($last_img_digits);
 
 if (isset($_GET['id'])) {
-	include __DIR__ . '/../includes/shop-item-head.php';
+	include __DIR__ . '/includes/shop-item-head.php';
 } else {
 	fs_open('Shop');
 }
@@ -59,11 +58,11 @@ if (isset($_GET['id'])) {
 <?php
 
 if (isset($_GET['id'])) {
-	include __DIR__ . '/../includes/shop-item-body.php';
+	include __DIR__ . '/includes/shop-item-body.php';
 	exit();
 }
 
-$img_dir = 'assets/img/thumb/';
+$img_dir = 'images/thumb/';
 
 foreach ($inventory as $item) {
 

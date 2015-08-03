@@ -2,11 +2,10 @@
 
 /*
  * Backend data-fetching script for Functional Stoneware
- * @author    Blieque Mariguan <himself [at] blieque.co.uk>
- * @copyright licensed under GPL v3
+ * @author    Blieque Mariguan <himself@blieque.co.uk>
+ * @copyright MIT license
  *
- * https://github.com/blieque/functionalstoneware.com/
- * https://gnu.org/licenses/gpl.html
+ * https://github.com/blieque/functionalstoneware.com
  *
  */
 
