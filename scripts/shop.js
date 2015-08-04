@@ -9,9 +9,9 @@
 
 // variables
 
-var basketOpen		= false,
-	basket			= [],
-	intIds 			= [],
+var basketOpen	= false,
+	basket		= [],
+	intervalId	= null,
 	lastData;
 
 // functions
@@ -55,30 +55,39 @@ function toggleBasket(e) {
 		return;
 	}
 
-	i = 0;
-	elem = $('#sb>a path');
-	vals = [[12, 2, 12, 2], [2, 12, 2, -2]]; // up arrow, down arrow
-	to = opening ? vals[1] : vals[0];
-	from = opening ? vals[0] : vals[1];
+	// change button arrow
 
-	intIds.push(setInterval(function(){
+	// start messy animation code
+	if (intervalId !== null) clearInterval(intervalId);
 
-		from[0] += to[3];
-		from[1] -= to[3];
-		from[2] += to[3];
+	var elem = $('#sb>a path'),
+		// ~48 fps
+		frameInterval = 21,
+		// 13 frames => ~.26 seconds
+		changePerFrame = .8;
+		// invert the changePerFrame if required
+		changePerFrame = opening ? changePerFrame *= -1 : changePerFrame,
+		// up arrow, down arrow
+		values = [12, 2],
+		from = opening ? [values[0],values[1]] : [values[1],values[0]];
+
+	intervalId = setInterval(function(){
+
+		from[0] += changePerFrame;
+		from[1] -= changePerFrame;
 
 		elem.attr('d', 'M2 ' + from[0] +
 					   'L12 ' + from[1] +
-					   'L22 ' + from[2]);
+					   'L22 ' + from[0]);
 
-		if (from[2] == to[2]) {
-			intIds.forEach(clearInterval);
-			intIds = [];
+		if (from[0] >= values[0] ||
+			from[0] <= values[1]) {
+			clearInterval(intervalId);
+			intervalId = null;
 		}
 
-		i++;
-
-	}, 71)); // 24 fps
+	}, frameInterval);
+	// end messy animation code
 	
 	basketOpen = !basketOpen;
 
@@ -94,11 +103,11 @@ function addToBasket() {
 	var split  = location.pathname.split('/'),
 		itemId = parseInt(split[split.length - 1], 10);
 
-	$.get(location.origin + '/data', {id: itemId}, function(d) {
+	$.get(location.origin + '/data', {id: itemId}, function(data) {
 
-		data   = JSON.parse(d);
-		name   = data[0];
-		price  = data[1];
+		parsed = JSON.parse(data);
+		name   = parsed[0];
+		price  = parsed[1];
 		priceF = formatPrice(price);
 
 	});
@@ -108,3 +117,13 @@ function addToBasket() {
 function updateBasket() {
 
 }
+
+$(function(){
+
+	$('#sb-p').click(proceed);
+
+	$('#sip-a').click(addToBasket);
+
+	$('body').click(toggleBasket);
+
+});

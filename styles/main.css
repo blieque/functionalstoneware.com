@@ -219,30 +219,31 @@ footer { /* footer of all pages */
 	text-align:left!important;
 	z-index:2;
 }
-#sb,#sb>a {
+#sb,#sb>a { /* basket and basket button */
 	display:inline-block;
 }
-#sb>a {
+#sb>a { /* basket button  */
 	position:relative;
+	height:1.2em;
 	text-align:inherit;
 	box-shadow:4px 5px 0 0 rgba(0,0,0,.08);
 	z-index:4;
 }
-#sb>a svg {
+#sb>a svg { /* basket button arrow */
 	margin-right:.4em;
 }
-#sb div {
+#sb div { /* basket list container */
 	max-height:calc(100vh - 119px - 3em);
 	position:absolute;
 	right:0;
-	bottom:53px;
+	bottom:calc(3.2em + 1px);
 	left:-8em;
 	background:#fff;
 	border:1px solid #cdcdcd;
 	box-shadow:4px 4px 0 0 rgba(0,0,0,.08);
 	z-index:3;
 }
-#sb-p {
+#sb-p { /* basket list proceed button */
 	display:block;
 	margin:-1px -1px 0 -1px;
 	padding:.4em 1em;
@@ -251,12 +252,13 @@ footer { /* footer of all pages */
 	font-style:italic;
 	cursor:pointer;
 }
-#sb-p.sb-pi {
+#sb-p.sb-pi { /* basket list proceed button (inactive) */
 	color:#aaa;
 	border-color:#cdcdcd;
 	background:#e1e1e1;
+	cursor:default;
 }
-#sb svg {
+#sb svg { /* all basket arrows (there are two) */
 	position:relative;
 	top:2px;
 	fill:none;
@@ -265,33 +267,30 @@ footer { /* footer of all pages */
 	stroke-linecap:round;
 	stroke-linejoin:round;
 }
-#sb-p svg {
+#sb-p svg { /* proceed button arrow */
 	left:.4em;
 }
-#sb-p:not(.sb-pi):hover svg {
+#sb-p:not(.sb-pi):hover svg { /* proceed button (not inactive) arrow */
 	left:1.2em;
 }
-#sb-p.sb-pi svg {
+#sb-p.sb-pi svg { /* proceed button (inactive) arrow */
 	stroke:#aaa;
 }
-#sb-n {
+#sb-n { /* basket list "no items" text */
 	color:#bbb;
 	font-style:italic;
 	text-align:center;
 }
-#sb ul {
+#sb ul { /* basket list */
 	margin:0;
 	padding:.4em 0;
 	/*overflow-y:scroll;*/
 	list-style:none;
 }
-#sb li {
+#sb li { /* basket list item */
 	padding:.4em 1em;
 }
-#sb li span:before {
-	content:'$';
-}
-#sb span {
+#sb span { /* price container, I think */
 	float:right;
 }
 

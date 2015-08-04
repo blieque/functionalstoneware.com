@@ -27,16 +27,16 @@ function fs_open($title = '') { // opener/head function
 <!DOCTYPE html><html><head>
 	<title><?php echo $title ?>Functional Stoneware</title>
 	<link rel="shortcut icon" href="/favicon.ico" />
-	<link rel="stylesheet" href="styles/main.css">
-	<link rel="stylesheet" href="styles/tablet.css" media="(max-device-width:27.5cm) or (max-device-width:1100px)">
-	<link rel="stylesheet" href="styles/smartphone.css" media="(max-device-width:16cm) or (max-device-width:720px)">
-	<link rel="stylesheet" href="styles/print.css" media="print">
+	<link rel="stylesheet" href="/styles/main.css">
+	<link rel="stylesheet" href="/styles/tablet.css" media="(max-device-width:27.5cm) or (max-device-width:1100px)">
+	<link rel="stylesheet" href="/styles/smartphone.css" media="(max-device-width:16cm) or (max-device-width:720px)">
+	<link rel="stylesheet" href="/styles/print.css" media="print">
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 	<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
-	<script src="scripts/jquery.min.js"></script>
-	<script src="scripts/jquery.contact-form.js"></script>
-	<script src="scripts/jquery.shop.js"></script>
-	<script src="scripts/jquery.main.js"></script>
+	<script src="/scripts/jquery.min.js"></script>
+	<script src="/scripts/contact-form.js"></script>
+	<script src="/scripts/shop.js"></script>
+	<script src="/scripts/main.js"></script>
 	<script>if(window.location.host=='functionalstoneware.com'){alert('This website is under development. If you wish to contact Rhiain, please follow the Facebook page link at the top of the page.')}</script>
 </head>
 <body>

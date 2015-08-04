@@ -78,7 +78,6 @@ function formSubmit(d, s) {	// data, status
 
 		// call svg function
 		formSvg(d);
-
 		formFirstSubmit = false;
 
 	}
@@ -96,3 +95,15 @@ function formSvg(d) { // which svg; 0 or 1?
 	$(path).css('stroke-dasharray', dal + ' 40');
 
 }
+
+$(function(){
+
+	$('input,textarea').focus(function(){
+		$(this).removeClass('e');
+	});
+
+	$('#fs').click(function(){
+		$.post('contact', 'action=submit&' + $('form').serialize(), formSubmit);
+	});
+
+});

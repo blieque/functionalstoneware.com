@@ -11,7 +11,8 @@
 
 # if the item has a name, use it
 
-$item = $inventory[strval($_GET['id'])];
+// var_dump($inventory);
+$item = $inventory[strval($_GET['id']) - 1];
 
 if (strlen($item[1]) > 0) {
 	fs_open($item[1] . ' &ndash; Shop');
