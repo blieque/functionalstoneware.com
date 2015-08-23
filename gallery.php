@@ -14,15 +14,15 @@ fs_open('Gallery');
 
 for ($i = 1; $i <= 83; $i++) {
 
-	$id;
+    $id;
 
-	if ($i < 10) {
-		$id = '0' . $i;
-	} else {
-		$id = $i;
-	}
+    if ($i < 10) {
+        $id = '0' . $i;
+    } else {
+        $id = $i;
+    }
 
-	echo "<a href=\"/images/full/$id.jpg\"><img src=\"/images/thumb/$id.jpg\"></a>";
+    echo "<a href=\"/images/full/$id.jpg\"><img src=\"/images/thumb/$id.jpg\"></a>";
 
 }
 

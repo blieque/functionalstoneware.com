@@ -8,10 +8,10 @@
  */
 
 function init() {
-	$('#sb div').slideUp(0);
+    $('#sb div').slideUp(0);
 }
 
 // jQ call
 $(function(){
-	init();
+    init();
 });

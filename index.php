@@ -16,8 +16,8 @@ fs_open();
 
 </section>
 <section>
-	<div class="_placehold"></div>
-	<div class="_placehold"></div>
+    <div class="_placehold"></div>
+    <div class="_placehold"></div>
 
 <?php
 

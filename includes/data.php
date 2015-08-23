@@ -13,13 +13,13 @@ include __DIR__ . '/functions.php';
 include __DIR__ . '/../../../../common/private.php';
 
 if (!isset($_GET['id'])) {
-	exit();
+    exit();
 }
 
 $id = intval($_GET['id']);
 
 if ($id == 0) {
-	exit();
+    exit();
 }
 
 $mysqli = new mysqli('localhost', $mysql_read_un, $mysql_read_pw, 'functionalstoneware');

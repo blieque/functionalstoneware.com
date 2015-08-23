@@ -15,7 +15,7 @@
 $item = $inventory[strval($_GET['id']) - 1];
 
 if (strlen($item[1]) > 0) {
-	fs_open($item[1] . ' &ndash; Shop');
+    fs_open($item[1] . ' &ndash; Shop');
 } else {
-	fs_open('Shop');
+    fs_open('Shop');
 }
