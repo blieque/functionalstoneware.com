@@ -24,19 +24,24 @@ function fs_open($title = '') { // opener/head function
     }
 
 ?>
-<!DOCTYPE html><html><head>
+<!DOCTYPE html><html>
+<head>
     <title><?php echo $title ?>Functional Stoneware</title>
-    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="apple-touch-icon-precomposed" type="image/png" href="/images/icon/180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="/images/icon/192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/images/icon/096.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/images/icon/048.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="/images/icon/032.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/icon/016.png" sizes="16x16">
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/tablet.css" media="(max-device-width:27.5cm) or (max-device-width:1100px)">
     <link rel="stylesheet" href="/styles/smartphone.css" media="(max-device-width:16cm) or (max-device-width:720px)">
     <link rel="stylesheet" href="/styles/print.css" media="print">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
-    <script src="/scripts/jquery.min.js"></script>
-    <script src="/scripts/contact-form.js"></script>
-    <script src="/scripts/shop.js"></script>
-    <script src="/scripts/main.js"></script>
+
     <script>if(window.location.host=='functionalstoneware.com'){alert('This website is under development. If you wish to contact Rhiain, please follow the Facebook page link at the top of the page.')}</script>
 </head>
 <body>
@@ -65,7 +70,14 @@ function fs_close() { // close tags opened in the fs_open() function
 
 ?>
 
-</section><footer><p>Content provided under MIT and Creative Commons BY-NC-SA licenses (<a class="reg-link" href="about#license">details</a>)</p></footer></body></html>
+    </section>
+    <footer><p>Content provided under MIT and Creative Commons BY-NC-SA licenses (<a class="reg-link" href="about#license">details</a>)</p></footer>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
+    <script src="/scripts/jquery.min.js"></script>
+    <script src="/scripts/contact-form.js"></script>
+    <script src="/scripts/shop.js"></script>
+    <script src="/scripts/main.js"></script>
+</body></html>
 
 <?php
 
