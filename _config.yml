@@ -1,0 +1,10 @@
+# site
+title: Functional Stoneware Documentation
+url: "http://blieque.github.io"
+baseurl: "/functionalstoneware.com"
+
+email:  "himself@blieque.co.uk"
+github: "blieque"
+
+# build configuration
+markdown: rdiscount
